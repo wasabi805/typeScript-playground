@@ -1,4 +1,4 @@
-console.log("i work!!!");
+
 interface Iitem {
   prodId: string | number;
   prodName: string | number;

@@ -95,14 +95,17 @@ Here, what we're saying is that function newInvoice fn and its args "has a type.
 
 - And since we know that newInvoice returns a newUser object containing products in their cart, we can assign the type of InewInvoice to the return of newInvoice function like so:
 
+  ```
   const newInvoice = <T extends InewInvoice>({ name, phone, cart }: T): InewInvoice => {
+
   let newUser = {
-  name,
-  phone,
-  cart,
+      name,
+      phone,
+      cart,
   };
 
   return newUser;
   };
+  ```
 
 Finally, if you were to hover over const newInvoice, you will see that the types are declared for that object.
