@@ -11,7 +11,7 @@ So that vscode recongnizes ts files run:
 [see](https://stackoverflow.com/a/56279581/7857134)
 Just a heads up, it will create a js file as well
 
-One of the most solid articles on Generics see [Jim Rottinger's Better Programing post : ] (https://betterprogramming.pub/typescript-generics-90be93d8c292#:~:text=The%20identity%20function%20is%20a,function%20is%20not%20very%20flexible.)
+One of the most solid articles on Generics see [Jim Rottinger's Better Programing post : ](https://betterprogramming.pub/typescript-generics-90be93d8c292#:~:text=The%20identity%20function%20is%20a,function%20is%20not%20very%20flexible.)
 
 Jack Herrington also has some great explanations on generics [here](https://www.youtube.com/watch?v=Q4QDyr0jLfo)
 
