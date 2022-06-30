@@ -27,10 +27,10 @@ So in terms of how Generics in TypeScript operate when they are applied to a jav
 - The carrots are the equivalent to the parenthesis of a javaScript function
 - The T is the equivalent of arg as they are both passed into their respective functions
 
-When the arg is created and passed into the javaScript function, arg's **type** is decalred at the same as T and passed into it's shadow TypeScript function.
+When the arg is created and passed into the javaScript function, the **type** associated with arg also gets declared as T . Similarly, T is passed along into its shadow TypeScript function.
 
 So as the arg in the javaScript function passes through it's function body, T follows along keeping track of the arg's type.
 
-Arg then can be anything and it's type is "being kept on record" for lack of a better term, by the shadow TypeScript function.
+Arg then can be anything and its type is "being kept on record" for lack of a better term, by the shadow TypeScript function.
 
-The TypeScript function is always making sure to check that when arg's value is ever used for things like to compute data or have arg's value altered that the type remains true to when it was first declared. The beauty of this is that arg can be any **type** of data. Arrays, booleans, strings, numbers etc and we have a way to keep track of what the type is for the javaScript arg.
+The TypeScript function is constantly checking and making sure that when arg's value is ever used for things like to compute data or have arg's value altered, arg's type remains true to when it was first declared. The beauty of this is that arg can be any **type** of data. Arrays, booleans, strings, numbers etc and we have a way to keep track of what the type is for the arg in javaScript.
