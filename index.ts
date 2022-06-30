@@ -23,7 +23,6 @@ interface InewInvoice extends Iuser {
   cart?: Iitem[] | undefined;
 }
 
-
 /* Assigning types the verbose way would look something like...
 
     const newInvoice = ({ name, phone, cart }: {name: string, phone: string, cart: Iitem[]}): InewInvoice => {
@@ -41,7 +40,11 @@ interface InewInvoice extends Iuser {
   see the README.md file for a broken down explanation.
 */
 
-const newInvoice = <T extends InewInvoice>({ name, phone, cart }: T): InewInvoice => {
+const newInvoice = <T extends InewInvoice>({
+  name,
+  phone,
+  cart,
+}: T): InewInvoice => {
   let newUser = {
     name,
     phone,
