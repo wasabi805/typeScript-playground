@@ -34,3 +34,43 @@ So as the arg in the javaScript function passes through it's function body, T fo
 Arg then can be anything and its type is "being kept on record" for lack of a better term, by the shadow TypeScript function.
 
 The TypeScript function is constantly checking and making sure that when arg's value is ever used for things like to compute data or have arg's value altered, arg's type remains true to when it was first declared. The beauty of this is that arg can be any **type** of data. Arrays, booleans, strings, numbers etc and we have a way to keep track of what the type is for the arg in javaScript.
+
+# Breaking Down Creating a Generic
+
+I'll use the example from the [docs](https://www.typescriptlang.org/docs/handbook/2/generics.html) and paraphrase it as to my understanding of what's happening when we create a generic.
+
+Let's examine this :
+
+    //A.)
+    interface GenericIdentityFn {
+        <Type>(arg: Type): Type;
+    }
+    //B.)
+    function identity<Type>(arg: Type): Type {
+        return arg;
+    }
+
+    //C.)
+    let myIdentity: GenericIdentityFn = identity;
+
+The bullets below correspond to the code block above
+What we have going on here is:
+
+A.)
+
+- An interface containing a typeScript function<> that accepts argument of Type and javaScript function() that accepts and agrument of arg where arg's type is Type.
+- The TypeScript function returns the Type that was passed in as Type to <>
+
+B.)
+
+- A javaScript function named identity that accepts an arg whose **type** is Type. Identity return arg whose return type should be Type.
+
+C.)
+
+- A variable called myIdentity whose type is the interface described in A.)
+- To reiterate, that interface's value is javaScript function that recieves an arg with **type** and that javaScript function should return a value that has the same type of arg.
+- myIdentity's value is set equal to the indentity function
+
+The reason it's kind of important to breakdown what's happening in the explanation above is because
+
+    >Understanding when to put the type parameter directly on the call signature and when to put it on the interface itself will be helpful in describing what aspects of a type are generic.
