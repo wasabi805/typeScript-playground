@@ -18,12 +18,13 @@ So that the compiler know how to handle this, you'll need to update the compiler
 
 solution found [here](https://stackoverflow.com/questions/45422573/property-entries-does-not-exist-on-type-objectconstructor)
 
-statrting at this section: ![set up](./images/tsConfigOutDirSetup.png?raw=true "Optional Title")
+statrting at this section:
 
-This last will include the declarations for the very latest standard library features known to the TypeScript language. As it represents a moving target, this option should be used with care since polyfilling all of the corresponding runtime is by definition a complex task that will require research and may involve loading different polyfills depending on your target runtime.
+> This last will include the declarations for the very latest standard library features known to the TypeScript language. As it represents a moving target, this option should be used with care since polyfilling all of the corresponding runtime is by definition a complex task that will require research and may involve loading different polyfills depending on your target runtime.
 
 Additionally, the array nature of the "lib" option allows you to combine multiple values to match your runtime. For example, to match es2015 capable web browsers with the addition of these object methods as provided by a polyfill, you can write
 
 ## Adding an output directory for compiled js file
 
 Here are the tsconfig settings to add a directory for the compiled javascript. Also take notice to update html file to read from the dist directory.
+![set up](./images/tsConfigOutDirSetup.png?raw=true "Optional Title")
