@@ -43,6 +43,23 @@ the add the `tsc --init` command as a script in package.json. This would look so
 
 You should now see a tsconfig.json file genereate in the root directory of your app.
 
+## Alow Js
+
+This part will be important later on. In the tsconfig file, you'll need to include "allowJs : true ".
+This is so that typescript wont flag an error when trying to export and import things like variables, objects, and functions from other js/ts files into index.ts.
+
+ex.)
+//inside tsconfig
+{
+"compilerOptions": {
+"target": "es2016",
+"module": "commonjs",
+...
+"allowJs": true,
+...
+}
+}
+
 ## convert index file into a typescript file
 
 after installing typescript via the terminal and generating a tsconfig.json file , rename your index.js file to index.ts
@@ -53,6 +70,9 @@ next, if you ran this in the terminal:
 
 it will scan the index.ts file and create a javascript version of index.js. This file will show up next to your index.ts in the same directory. We'll want this file to show up in a dist directory.
 
+An important thing to note here is that if you run tsc followed by a path to the file, it will ingnore any setting changes we make in the tsconfig.json file. [see](https://stackoverflow.com/a/45661353/7857134)
+Therefore when making a script to genereate the typescript compiler, we dont need to add the file
+
 It will be convient for you to make a script like we did for generating the tsconfig file. Here, I'll call it script "typescript".
 
     {
@@ -62,7 +82,7 @@ It will be convient for you to make a script like we did for generating the tsco
         "private": true,
         "scripts": {
             ...
-            "typescript": "npx tsc ./src/index.ts",
+            "typescript": "tsc",
             "generate-tsconfig": "tsc --init"
             ...
         },
@@ -83,6 +103,14 @@ make sure to run :
 again so that the compiler will scan your index.ts file to output index.js into your dist directory.
 
 ## Troubleshooting
+
+if you get this error:
+Could not find a declaration file for module '
+
+A quick fix till you find out what the issue is to comment it out:
+[see](https://stackoverflow.com/a/55576119/7857134)
+
+Try to avoid doing this though.
 
 if you get this error:
 Property 'entries' does not exist on type 'ObjectConstructor'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2017' or later.ts(2550)
