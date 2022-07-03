@@ -50,15 +50,16 @@ This is so that typescript wont flag an error when trying to export and import t
 
 ex.)
 //inside tsconfig
-{
-"compilerOptions": {
-"target": "es2016",
-"module": "commonjs",
-...
-"allowJs": true,
-...
-}
-}
+
+    {
+        "compilerOptions": {
+        "target": "es2016",
+        "module": "commonjs",
+        ...
+        "allowJs": true,
+        ...
+        }
+    }
 
 ## convert index file into a typescript file
 
